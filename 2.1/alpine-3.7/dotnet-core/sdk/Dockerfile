@@ -1,13 +1,13 @@
 FROM alpine:3.7
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apk add --no-cache \
 		ca-certificates \
 		curl \
 		wget \
 	&& rm -rf /var/lib/apt/lists/*
 	
 # procps is very common in build systems, and is a reasonably small package
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apk add --no-cache \
 		bzr \
 		git \
 		mercurial \
@@ -18,20 +18,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 	
 # Install .NET CLI dependencies
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        libc6 \
-        libcurl4 \
-        libgcc1 \
-        libgssapi-krb5-2 \
-        libicu60 \
-        liblttng-ust0 \
-        libssl1.0.0 \
-        libstdc++6 \
-        libunwind8 \
-        libuuid1 \
-        zlib1g \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache \
+        krb5-libs \
+        libgcc \
+        libintl \
+        libssl1.0 \
+        libstdc++ \
+        tzdata \
+        userspace-rcu \
+        zlib \
+        && apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
+        lttng-ust
 
 # Install .NET Core SDK
 ENV DOTNET_SDK_VERSION 2.1.302
