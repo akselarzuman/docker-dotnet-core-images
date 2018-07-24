@@ -166,6 +166,18 @@
                         "2.1",
                         "latest"
                     ]
+                },
+                {
+                    "id": 5,
+                    "name": "core-sdk",
+                    "osType": "linux",
+                    "os": "bionic",
+                    "dockerfile": "2.1/alpine-3.7/dotnet-core/sdk/",
+                    "tags": [
+                        "2.1.302-runtime-2.1.1-alpine",
+                        "2.1.302-alpine",
+                        "2.1-alpine"
+                    ]
                 }
             ]
         },
