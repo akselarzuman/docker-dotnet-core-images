@@ -37,7 +37,7 @@
                     "id": 3,
                     "name": "runtime-deps",
                     "osType": "linux",
-                    "os": "bionic",
+                    "os": "alpine",
                     "dockerfile": "runtime-deps/alpine-3.7/",
                     "tags": [
                         "2.0.7-deps-alpine",
@@ -101,7 +101,7 @@
                     "id": 8,
                     "name": "runtime",
                     "osType": "linux",
-                    "os": "bionic",
+                    "os": "alpine",
                     "dockerfile": "2.1/alpine-3.7/dotnet-core/runtime/",
                     "latest": true,
                     "tags": [
@@ -171,7 +171,7 @@
                     "id": 5,
                     "name": "core-sdk",
                     "osType": "linux",
-                    "os": "bionic",
+                    "os": "alpine",
                     "dockerfile": "2.1/alpine-3.7/dotnet-core/sdk/",
                     "tags": [
                         "2.1.302-runtime-2.1.1-alpine",
@@ -284,6 +284,18 @@
                 },
                 {
                     "id": 9,
+                    "name": "runtime",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.1/alpine-3.7/aspnet-core/runtime/",
+                    "tags": [
+                        "2.1.1-alpine",
+                        "2.1-alpine",
+                        "alpine-latest"
+                    ]
+                },
+                {
+                    "id": 10,
                     "name": "runtime-spa",
                     "osType": "linux",
                     "os": "xenial",
@@ -296,7 +308,7 @@
                     ]
                 },
                 {
-                    "id": 10,
+                    "id": 11,
                     "name": "runtime-spa",
                     "osType": "linux",
                     "os": "bionic",
@@ -312,7 +324,20 @@
                     ]
                 },
                 {
-                    "id": 11,
+                    "id": 12,
+                    "name": "runtime-spa",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.1/alpine-3.7/aspnet-core/runtime-spa/",
+                    "tags": [
+                        "2.1.1-spa-node-8.11.2-alpine",
+                        "spa-alpine-latest",
+                        "2.1-spa-alpine",
+                        "spa-alpine"
+                    ]
+                },
+                {
+                    "id": 13,
                     "name": "build",
                     "osType": "linux",
                     "os": "xenial",
@@ -325,7 +350,7 @@
                     ]
                 },
                 {
-                    "id": 12,
+                    "id": 14,
                     "name": "build",
                     "osType": "linux",
                     "os": "xenial",
@@ -338,6 +363,19 @@
                         "build-bionic-latest",
                         "build-latest",
                         "build"
+                    ]
+                },
+                {
+                    "id": 15,
+                    "name": "build",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.1/alpine-3.7/aspnet-core/build/",
+                    "tags": [
+                        "2.1.1-sdk-2.1.302-build-alpine",
+                        "2.1.1-sdk-2.1.302-node-8.11.2-build-alpine",
+                        "2.1-build-alpine",
+                        "build-alpine-latest"
                     ]
                 }
             ]
