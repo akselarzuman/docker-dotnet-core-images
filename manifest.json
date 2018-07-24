@@ -35,6 +35,19 @@
                 },
                 {
                     "id": 3,
+                    "name": "runtime-deps",
+                    "osType": "linux",
+                    "os": "bionic",
+                    "dockerfile": "runtime-deps/alpine-3.7/",
+                    "tags": [
+                        "2.0.7-deps-alpine",
+                        "2.0-deps-alpine",
+                        "2.1.1-deps-alpine",
+                        "2.1-deps-alpine"
+                    ]
+                },
+                {
+                    "id": 4,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "xenial",
@@ -45,7 +58,7 @@
                     ]
                 },
                 {
-                    "id": 4,
+                    "id": 5,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "bionic",
@@ -58,7 +71,7 @@
                     ]
                 },
                 {
-                    "id": 5,
+                    "id": 6,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "xenial",
@@ -70,7 +83,7 @@
                     ]
                 },
                 {
-                    "id": 6,
+                    "id": 7,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "bionic",
@@ -82,6 +95,19 @@
                         "2.1",
                         "bionic-latest",
                         "latest"
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "runtime",
+                    "osType": "linux",
+                    "os": "bionic",
+                    "dockerfile": "2.1/alpine-3.7/dotnet-core/runtime/",
+                    "latest": true,
+                    "tags": [
+                        "2.1.1-alpine",
+                        "2.1-alpine",
+                        "alpine-latest"
                     ]
                 }
             ]
