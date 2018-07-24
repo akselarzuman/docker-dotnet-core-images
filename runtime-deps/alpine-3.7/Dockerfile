@@ -1,24 +1,25 @@
 FROM alpine:3.7
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        ca-certificates \
-        \
-# .NET Core dependencies
-        libc6 \
-        libcurl3 \
-        libgcc1 \
-        libgssapi-krb5-2 \
-        libicu55 \
-        liblttng-ust0 \
-        libssl1.0.0 \
-        libstdc++6 \
-        libunwind8 \
-        libuuid1 \
-        zlib1g \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache \
+    ca-certificates \
+    \
+    # .NET Core dependencies
+    krb5-libs \
+    libgcc \
+    libintl \
+    libssl1.0 \
+    libstdc++ \
+    tzdata \
+    userspace-rcu \
+    zlib \
+    && apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
+    lttng-ust
 
-# Enable detection of running in a container
-ENV DOTNET_RUNNING_IN_CONTAINER=true
+# Configure Kestrel web server to bind to port 80 when present
+ENV ASPNETCORE_URLS=http://+:80 \
+    # Enable detection of running in a container
+    DOTNET_RUNNING_IN_CONTAINER=true \
+    # Set the invariant mode since icu_libs isn't included (see https://github.com/dotnet/announcements/issues/20)
+    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
 
 LABEL authors="Armut.com <dev@armut.com>"
