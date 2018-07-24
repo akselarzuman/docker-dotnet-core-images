@@ -1,7 +1,7 @@
 FROM armutcom/dotnet-core-runtime:2.1.1-deps-alpine
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apk add --no-cache \
+		ca-certificates \
         curl \
     && rm -rf /var/lib/apt/lists/*
 
